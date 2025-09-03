@@ -1,0 +1,12 @@
+{
+    "builds": [{
+        "src": "learning_log/wsgi.py",
+        "use": "@vercel/python"
+    }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "learning_log/wsgi.py"
+        }
+    ]
+}
