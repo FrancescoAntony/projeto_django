@@ -1,12 +1,18 @@
 {
-    "builds": [{
-        "src": "learning_log/wsgi.py",
-        "use": "@vercel/python"
-    }],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "learning_log/wsgi.py"
-        }
-    ]
+  "builds": [
+    {
+      "src": "learning_log/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/staticfiles/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "learning_log/wsgi.py"
+    }
+  ]
 }
